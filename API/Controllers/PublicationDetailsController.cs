@@ -8,11 +8,11 @@ namespace API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AbsencePermitEznController : ControllerBase
+    public class PublicationDetailsController : ControllerBase
     {
-        private readonly IAbsencePermitEznService _service;
+        private readonly IPublicationDetailsService _service;
 
-        public AbsencePermitEznController(IAbsencePermitEznService service)
+        public PublicationDetailsController(IPublicationDetailsService service)
         {
             _service = service;
         }
@@ -23,28 +23,20 @@ namespace API.Controllers
             return Ok(await _service.Get());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetByPublicationId(int publicationId)
+        {
+            return Ok(await _service.GetByPublicationId(publicationId));
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _service.GetById(id));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetByEmployeeId(int emploeeId)
-        {
-            var result = await _service.GetByEmployeeId(emploeeId);
-            return Ok(result);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetByDepartmentId(int departmentId)
-        {
-            var result = await _service.GetByDepartmentId(departmentId);
-            return Ok(result);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Save([FromBody] PublicationDetailsViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +46,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Put([FromBody] PublicationDetailsViewModel model)
         {
             if (ModelState.IsValid)
             {

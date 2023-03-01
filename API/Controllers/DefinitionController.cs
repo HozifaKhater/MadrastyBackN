@@ -8,11 +8,11 @@ namespace API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AbsencePermitEznController : ControllerBase
+    public class DefinitionController : ControllerBase
     {
-        private readonly IAbsencePermitEznService _service;
+        private readonly IDefinitionService _service;
 
-        public AbsencePermitEznController(IAbsencePermitEznService service)
+        public DefinitionController(IDefinitionService service)
         {
             _service = service;
         }
@@ -30,21 +30,13 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetByEmployeeId(int emploeeId)
+        public async Task<IActionResult> GetSCodeArabic()
         {
-            var result = await _service.GetByEmployeeId(emploeeId);
-            return Ok(result);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetByDepartmentId(int departmentId)
-        {
-            var result = await _service.GetByDepartmentId(departmentId);
-            return Ok(result);
+            return Ok(await _service.GetSCodeArabic());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Save([FromBody] DefinitionViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +46,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Put([FromBody] DefinitionViewModel model)
         {
             if (ModelState.IsValid)
             {

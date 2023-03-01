@@ -8,11 +8,11 @@ namespace API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AbsencePermitEznController : ControllerBase
+    public class PublicationController : ControllerBase
     {
-        private readonly IAbsencePermitEznService _service;
+        private readonly IPublcationService _service;
 
-        public AbsencePermitEznController(IAbsencePermitEznService service)
+        public PublicationController(IPublcationService service)
         {
             _service = service;
         }
@@ -29,22 +29,8 @@ namespace API.Controllers
             return Ok(await _service.GetById(id));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetByEmployeeId(int emploeeId)
-        {
-            var result = await _service.GetByEmployeeId(emploeeId);
-            return Ok(result);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetByDepartmentId(int departmentId)
-        {
-            var result = await _service.GetByDepartmentId(departmentId);
-            return Ok(result);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Save([FromBody] PublicationViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +40,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Put([FromBody] PublicationViewModel model)
         {
             if (ModelState.IsValid)
             {

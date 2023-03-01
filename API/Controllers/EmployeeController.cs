@@ -8,11 +8,11 @@ namespace API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AbsencePermitEznController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
-        private readonly IAbsencePermitEznService _service;
+        private readonly IEmployeeService _service;
 
-        public AbsencePermitEznController(IAbsencePermitEznService service)
+        public EmployeeController(IEmployeeService service)
         {
             _service = service;
         }
@@ -23,28 +23,31 @@ namespace API.Controllers
             return Ok(await _service.Get());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetByJobId(int jobId)
+        {
+            return Ok(await _service.GetByJobId(jobId));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetBySubjectId(int subjectId)
+        {
+            return Ok(await _service.GetBySubjectId(subjectId));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetBySubjectIdAndValidation(int subjectId,string start)
+        {
+            return Ok(await _service.GetBySubjectIdAndValidation(subjectId,start));
+        }
+
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _service.GetById(id));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetByEmployeeId(int emploeeId)
-        {
-            var result = await _service.GetByEmployeeId(emploeeId);
-            return Ok(result);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetByDepartmentId(int departmentId)
-        {
-            var result = await _service.GetByDepartmentId(departmentId);
-            return Ok(result);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Save([FromBody] EmployeeViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +57,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] AbsencePermitEznViewModel model)
+        public async Task<IActionResult> Put([FromBody] EmployeeViewModel model)
         {
             if (ModelState.IsValid)
             {
