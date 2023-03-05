@@ -1,13 +1,13 @@
 
-.vs
+/.vs
 /API/obj
 /API/bin
 /BusinessLogic/obj
 /BusinessLogic/bin
 /API/obj/Debug/net6.0/API.csproj.AssemblyReference.cache
-.vs/SMS_Project/v17/.suo
-.vs/SMS_Project/v17/.suo
+/.vs/SMS_Project/v17/.suo
+/.vs/SMS_Project/v17/.suo
 *.exe
-BusinessLogic/bin/Debug/net6.0/BusinessLogic.deps.json
-BusinessLogic/bin/Debug/net6.0/BusinessLogic.dll
-BusinessLogic/bin/Debug/net6.0/BusinessLogic.pdb
+/BusinessLogic/bin/Debug/net6.0/BusinessLogic.deps.json
+/BusinessLogic/bin/Debug/net6.0/BusinessLogic.dll
+/BusinessLogic/bin/Debug/net6.0/BusinessLogic.pdb
