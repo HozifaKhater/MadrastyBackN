@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class LibraryController : Controller
     {
@@ -29,7 +29,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] LibraryViewModel model)
+        public async Task<IActionResult> Post([FromBody] LibraryViewModel model)
         {
             if (ModelState.IsValid)
             {

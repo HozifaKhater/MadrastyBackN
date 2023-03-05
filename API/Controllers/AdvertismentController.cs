@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AdvertismentController : Controller
     {
@@ -36,7 +36,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] AdvertismentViewModel model)
+        public async Task<IActionResult> Post([FromBody] AdvertismentViewModel model)
         {
             if (ModelState.IsValid)
             {
