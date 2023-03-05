@@ -20,4 +20,3 @@ namespace BusinessLogic.Abstractions
         Task<ServiceResponse> GetBySubjectIdAndValidation(int subjectId, string start);
     }
 }
-}

@@ -43,6 +43,16 @@ namespace BusinessLogic.Implementations
             return new ServiceResponse(dalResponse);
         }
 
+        public Task<ServiceResponse> GetByJobId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ServiceResponse> GetJobDetails(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ServiceResponse> Save(JobDetailsViewModel JobDetails)
         {
             var dalResponse = await _db.ExecuteNonQuery("SaveJobDetails",

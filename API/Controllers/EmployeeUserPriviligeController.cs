@@ -26,7 +26,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetByEmployeeId(int employeeId)
         {
-            return Ok(await _service.GetByEmployeeId(employeeId));
+            return Ok(await _service.GetById(employeeId));
         }
         [HttpGet]
         public async Task<IActionResult> GetBySubjectId(int employeeId, string route)

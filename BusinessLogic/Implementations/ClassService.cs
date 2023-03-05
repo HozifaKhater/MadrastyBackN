@@ -60,7 +60,7 @@ namespace BusinessLogic.Implementations
             var dalResponse = await _db.ExecuteQuery("GetClassCountForTeacher", pars);
             return new ServiceResponse(dalResponse);
         }
-        public async Task<ServiceResponse> Save(CatchRecieptViewModel Class)
+        public async Task<ServiceResponse> Save(ClassViewModel Class)
         {
             var dalResponse = await _db.ExecuteNonQuery("SaveClass",
               _db.CreateListOfSqlParams(Class, new List<string>() { "Id" }));
@@ -74,6 +74,11 @@ namespace BusinessLogic.Implementations
                _db.CreateListOfSqlParams(Class, new List<string>()));
 
             return new ServiceResponse(dalResponse);
+        }
+
+        public Task<ServiceResponse> Update(ClassViewModel Class)
+        {
+            throw new NotImplementedException();
         }
     }
 }
