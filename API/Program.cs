@@ -1,3 +1,4 @@
+using API.Controllers;
 using BusinessLogic.Abstractions;
 using BusinessLogic.Contexts;
 using BusinessLogic.Implementations;
@@ -17,7 +18,79 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
+builder.Services.AddScoped<IAbsenceCaseDetailsService, AbsenceCaseDetailsService>();
+builder.Services.AddScoped<IAbsencePermitEznService, AbsencePermitEznService>();
+builder.Services.AddScoped<IAbsenceService, AbsenceService>();
+builder.Services.AddScoped<IAbsenceStatisticsService, AbsenceStatisticsService>();
+builder.Services.AddScoped<IAbsenseCaseService, AbsenceCaseService>();
+builder.Services.AddScoped<IActivityService, ActivityService>();
+builder.Services.AddScoped<IAdvertimentService, AdvertismentService>();
+builder.Services.AddScoped<IAlertService, AlertService>();
+builder.Services.AddScoped<IBehavioralStatusService, BehavioralStatusService>();
+builder.Services.AddScoped<IBehaviourStatusDetailsService, BehaviourStatusDetailsService>();
+builder.Services.AddScoped<IBehaviourStatusService, BehaviourStatusService>();
+builder.Services.AddScoped<IBoardService, BoardService>();
+builder.Services.AddScoped<IBoardTypeService, BoardTypeService>();
+builder.Services.AddScoped<IBorrowedBookService, BorrowedBookService>();
+builder.Services.AddScoped<ICatchRecieptService, CatchRecieptService>();
+builder.Services.AddScoped<IChangeBranchService, ChangeBranchService>();
+builder.Services.AddScoped<IClassService, ClassService>();
+builder.Services.AddScoped<ICorridorsService, CorridorsService>();
+builder.Services.AddScoped<ICorridorSupervisionService, CorridorSupervisionService>();
+builder.Services.AddScoped<ICorrMeetingService, CorrMeetingService>();
+builder.Services.AddScoped<IDefinitionService, DefinitionService>();
 builder.Services.AddScoped<IDepartmanetService, DepartmentService>();
+builder.Services.AddScoped<IDivisionService, DivisionService>();
+builder.Services.AddScoped<IEmployeeeUserPrivilige, EmployeeUserPrivilige>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IEvaluationItemService, EvaluationItemService>();
+builder.Services.AddScoped<IEvaluationSettingsService, EvaluationSettingService>();
+builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IExcellentStudentService, ExcellentStudentService>();
+builder.Services.AddScoped<IFailureCasesService, FailureCasesService>();
+builder.Services.AddScoped<IGdwel7ssService, Gdwel7ssService>();
+builder.Services.AddScoped<IGoodBadStudentsCardService, GoodBadStudentsCardService>();
+builder.Services.AddScoped<IGroupMeetingService, GroupMeetingService>();
+builder.Services.AddScoped<IHealthCasesService, HealthCasesService>();
+builder.Services.AddScoped<IHolidaysAndFeastsService, HolidaysAndFeastsService>();
+builder.Services.AddScoped<IIndividualCasesService, IndividualCasesService>();
+builder.Services.AddScoped<IInstructionsService, InstructionsService>();
+builder.Services.AddScoped<IJobDetailsService, JobDetailsService>();
+builder.Services.AddScoped<IJobMasterService, JobMasterService>();
+builder.Services.AddScoped<ILectureService, LectureService>();
+builder.Services.AddScoped<ILevelsService, LevelsService>();
+builder.Services.AddScoped<ILibraryService, LibraryService>();
+builder.Services.AddScoped<IMaintenanceService, MaintenanceService>();
+builder.Services.AddScoped<IMeetingTypeService, MeetingTypeService>();
+builder.Services.AddScoped<IMonthValueService, MonthValueService>();
+builder.Services.AddScoped<INewsService, NewsService>();
+builder.Services.AddScoped<INewWorkService, NewWorkService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IObservationService, ObservationService>();
+builder.Services.AddScoped<IOtherStudentsSlidesService, OtherStudentsSlidesService>();
+builder.Services.AddScoped<IPaymentRecieptService, PaymentRecieptService>();
+builder.Services.AddScoped<IPsychologistPlanService, PsychologistPlanService>();
+builder.Services.AddScoped<IPublicationDetailsService, PublicationDetailsService>();
+builder.Services.AddScoped<IPublcationService, PublicationServcie>();
+builder.Services.AddScoped<IRegimeCouncilStudentService, RegimeCouncilStudentService>();
+builder.Services.AddScoped<ISchoolDataService, SchoolDataService>();
+builder.Services.AddScoped<ISchoolPartyService, SchoolPartyService>();
+builder.Services.AddScoped<ISchoolYearDataService, SchoolYearDataService>();
+builder.Services.AddScoped<ISingalIrConnectionService, SingalIrConnectionService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IStudentStatusBehaviourReportService, StudentStatusBehaviourReportService>();
+builder.Services.AddScoped<ITa7dierMasterService, Ta7dierMasterService>();
+builder.Services.AddScoped<ITakeemMasterService, TakeemMasterService>();
+builder.Services.AddScoped<IUserPrivilegesService, UserPrivilegesService>();
+builder.Services.AddScoped<IWorkPlanService, WorkPlanService>();
+
+
+//builder.Services.AddScoped<ISocialWorkerService, SocialWorkerService>(); MOMEN
+//builder.Services.AddScoped<IDelayService, DelayService>();DUHA
+//builder.Services.AddScoped<ISubjectService, SubjectService>();MOMEN
+//builder.Services.AddScoped<IParentsMeetingsService, ParentsMeetingsController>();MOMEN
+//builder.Services.AddScoped<IMentalityInquiriesService, MentalityInquiriesService>();MOMEN
+//builder.Services.AddScoped<IMessagesViewModelService, MessagesService>();MOMEN
 
 var app = builder.Build();
 
