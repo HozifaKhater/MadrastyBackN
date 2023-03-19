@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Contexts;
+﻿using BusinessLogic.Abstractions;
+using BusinessLogic.Contexts;
 using BusinessLogic.Responses;
 using BusinessLogic.ViewModels;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Implementations
 {
-    public class MentalityInquiriesService
+    public class MentalityInquiriesService : IMentalityInquiriesService
     {
         private readonly IDatabaseContext _db;
 
@@ -18,7 +19,7 @@ namespace BusinessLogic.Implementations
             _db = db;
         }
 
-        public async Task<ServiceResponse> DeleteMentalityInquiries(int mentalityInquiriesId)
+        public async Task<ServiceResponse> Delete(int mentalityInquiriesId)
         {
             var pars = new Dictionary<string, string>();
             pars.Add(nameof(mentalityInquiriesId), mentalityInquiriesId.ToString());
@@ -27,13 +28,13 @@ namespace BusinessLogic.Implementations
             return new ServiceResponse(dalResponse);
         }
 
-        public async Task<ServiceResponse> GetMentalityInquiries()
+        public async Task<ServiceResponse> Get()
         {
             var dalResponse = await _db.ExecuteQuery("GetMentalityInquiries");
             return new ServiceResponse(dalResponse);
         }
 
-        public async Task<ServiceResponse> GetMentalityInquiriesById(int mentalityInquiriesId)
+        public async Task<ServiceResponse> GetById(int mentalityInquiriesId)
         {
             var pars = new Dictionary<string, string>();
             pars.Add(nameof(mentalityInquiriesId), mentalityInquiriesId.ToString());
@@ -42,7 +43,7 @@ namespace BusinessLogic.Implementations
             return new ServiceResponse(dalResponse);
         }
 
-        public async Task<ServiceResponse> SaveMentalityInquiries(MentalityInquiriesViewModel mentalityInquiries)
+        public async Task<ServiceResponse> Save(MentalityInquiriesViewModel mentalityInquiries)
         {
             var dalResponse = await _db.ExecuteNonQuery("SaveMentalityInquiries",
                _db.CreateListOfSqlParams(mentalityInquiries, new List<string>() { "Id" }));
@@ -50,7 +51,7 @@ namespace BusinessLogic.Implementations
             return new ServiceResponse(dalResponse);
         }
 
-        public async Task<ServiceResponse> UpdateMentalityInquiries(MentalityInquiriesViewModel mentalityInquiries)
+        public async Task<ServiceResponse> Update(MentalityInquiriesViewModel mentalityInquiries)
         {
             var dalResponse = await _db.ExecuteNonQuery("UpdateMentalityInquiries",
                _db.CreateListOfSqlParams(mentalityInquiries, new List<string>()));

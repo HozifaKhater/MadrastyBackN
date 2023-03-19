@@ -23,8 +23,8 @@ namespace API.Controllers
             return Ok(await _service.Get());
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("id")]
+        public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _service.GetById(id));
         }
@@ -49,7 +49,7 @@ namespace API.Controllers
             return Ok(new ServiceResponse("Validation Error"));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("id")]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await _service.Delete(id));

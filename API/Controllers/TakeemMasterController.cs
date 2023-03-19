@@ -23,14 +23,14 @@ namespace API.Controllers
             return Ok(await _service.Get());
         }
 
-        [HttpGet]
+        [HttpGet("id")]
         public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _service.GetById(id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] TakeemMasterViewModel model)
+        public async Task<IActionResult> Save([FromBody] TakeemMasterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -40,7 +40,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] TakeemMasterViewModel model)
+        public async Task<IActionResult> Update([FromBody] TakeemMasterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostDetails([FromBody] TakeemMasterDetailsViewModel model)
+        public async Task<IActionResult> SaveDetails([FromBody] TakeemMasterDetailsViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutDetails([FromBody] TakeemMasterDetailsViewModel model)
+        public async Task<IActionResult> UpdateDetails([FromBody] TakeemMasterDetailsViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -93,10 +93,10 @@ namespace API.Controllers
         {
             return Ok(await _service.DeleteDetails(id));
         }
-        [HttpGet]
-        public async Task<IActionResult> GetDetailsByTakeemId(int id)
+        [HttpGet("takeemId")]
+        public async Task<IActionResult> GetDetailsByTakeemId(int takeemId)
         {
-            return Ok(await _service.GetDetailsByTakeemId(id));
+            return Ok(await _service.GetDetailsByTakeemId(takeemId));
         }
 
         [HttpGet]

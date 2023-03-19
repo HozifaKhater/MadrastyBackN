@@ -68,17 +68,12 @@ namespace BusinessLogic.Implementations
             return new ServiceResponse(dalResponse);
         }
 
-        public async Task<ServiceResponse> Update(CatchRecieptViewModel Class)
+        public async Task<ServiceResponse> Update(ClassViewModel Class)
         {
             var dalResponse = await _db.ExecuteNonQuery("UpdateClass",
                _db.CreateListOfSqlParams(Class, new List<string>()));
 
             return new ServiceResponse(dalResponse);
-        }
-
-        public Task<ServiceResponse> Update(ClassViewModel Class)
-        {
-            throw new NotImplementedException();
         }
     }
 }

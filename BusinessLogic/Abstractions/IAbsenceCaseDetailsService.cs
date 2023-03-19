@@ -12,7 +12,9 @@ namespace BusinessLogic.Abstractions
     {
         Task<ServiceResponse> Get();
         Task<ServiceResponse> GetById(int absenceCaseDetailsId);
+        Task<ServiceResponse> GetByAbsenceCaseId(int absenceCaseId);
         Task<ServiceResponse> Delete(int absenceCaseDetailsId);
+        Task<ServiceResponse> DeleteByAbsenceCaseId(int absenceCaseId);
         Task<ServiceResponse> Save(AbsenceCaseDetailsViewModel absenceCaseDetails);
         Task<ServiceResponse> Update(AbsenceCaseDetailsViewModel absenceCaseDetails);
     }

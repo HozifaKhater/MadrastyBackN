@@ -83,14 +83,40 @@ builder.Services.AddScoped<ITa7dierMasterService, Ta7dierMasterService>();
 builder.Services.AddScoped<ITakeemMasterService, TakeemMasterService>();
 builder.Services.AddScoped<IUserPrivilegesService, UserPrivilegesService>();
 builder.Services.AddScoped<IWorkPlanService, WorkPlanService>();
-
-
-//builder.Services.AddScoped<ISocialWorkerService, SocialWorkerService>(); MOMEN
-//builder.Services.AddScoped<IDelayService, DelayService>();DUHA
-//builder.Services.AddScoped<ISubjectService, SubjectService>();MOMEN
-//builder.Services.AddScoped<IParentsMeetingsService, ParentsMeetingsController>();MOMEN
-//builder.Services.AddScoped<IMentalityInquiriesService, MentalityInquiriesService>();MOMEN
-//builder.Services.AddScoped<IMessagesViewModelService, MessagesService>();MOMEN
+builder.Services.AddScoped<ISupervisorOpinionService, SupervisorOpinionService>();
+builder.Services.AddScoped<IVisitService, VisitService>();
+builder.Services.AddScoped<ISwotService, SwotService>();
+builder.Services.AddScoped<IStudentParentMeetingService, StudentParentMeetingService>();
+builder.Services.AddScoped<IStudentPremService, StudentPremService>();
+builder.Services.AddScoped<IPhaseService, PhaseService>();
+builder.Services.AddScoped<IExcellentStudentService, ExcellentStudentService>();
+builder.Services.AddScoped<IAbsenseCaseService, AbsenceCaseService>();
+builder.Services.AddScoped<IAbsenceCaseDetailsService, AbsenceCaseDetailsService>();
+builder.Services.AddScoped<IHealthCasesService, HealthCasesService>();
+builder.Services.AddScoped<ISpeakingDisorderService, SpeakingDisorderService>();
+builder.Services.AddScoped<ISpeakingDisorderDetailsFirstService, SpeakingDisorderDetailsFirstService>();
+builder.Services.AddScoped<ISpeakingDisorderDetailsSecondService, SpeakingDisorderDetailsSecondService>();
+builder.Services.AddScoped<IFailureCasesService, FailureCasesService>();
+builder.Services.AddScoped<IStatusService, StatusService>();
+builder.Services.AddScoped<IAchievementLevelService, AchievementLevelService>();
+builder.Services.AddScoped<IStudentTransferService, StudentTransferService>();
+builder.Services.AddScoped<IStudentLeaveService, StudentLeaveService>();
+builder.Services.AddScoped<ISuggestionService, SuggestionService>();
+builder.Services.AddScoped<IRestToRedoService, RestToRedoService>();
+builder.Services.AddScoped<IAccusedStudentInGuiltService, AccusedStudentInGuiltService>();
+builder.Services.AddScoped<IGuiltService, GuiltService>();
+builder.Services.AddScoped<ISonOfMartyrsService, SonOfMartyrsService>();
+builder.Services.AddScoped<ISpecialStudentService, SpecialStudentService>();
+builder.Services.AddScoped<IOtherStudentsSlidesService, OtherStudentsSlidesService>();
+builder.Services.AddScoped<IGuideService, GuideService>();
+builder.Services.AddScoped<ITestMetricService, TestMetricService>();
+builder.Services.AddScoped<IRegimeCouncilStudentService, RegimeCouncilStudentService>();
+builder.Services.AddScoped<IMentalityInquiriesService, MentalityInquiriesService>();
+builder.Services.AddScoped<ISocialWorkerService, SocialWorkerService>(); 
+builder.Services.AddScoped<IDelayService, DelayService>();
+builder.Services.AddScoped<ISubjectService, SubjectService>();
+builder.Services.AddScoped<IParentsMeetingsService, ParentsMeetingsService>();
+builder.Services.AddScoped<IMessagesViewModelService, MessagesService>();
 
 var app = builder.Build();
 

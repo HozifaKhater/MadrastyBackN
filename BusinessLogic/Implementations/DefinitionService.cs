@@ -48,6 +48,15 @@ namespace BusinessLogic.Implementations
             var dalResponse = await _db.ExecuteQuery("GetDefinitionById", pars);
             return new ServiceResponse(dalResponse);
         }
+        public async Task<ServiceResponse> GetBySCode(string scode)
+        {
+            var pars = new Dictionary<string, string>();
+            pars.Add(nameof(scode), scode);
+
+            var dalResponse = await _db.ExecuteQuery("GetByScode", pars);
+            return new ServiceResponse(dalResponse);
+        }
+
 
         public async Task<ServiceResponse> Save(DefinitionViewModel definition)
         {

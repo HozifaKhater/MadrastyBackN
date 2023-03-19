@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Contexts;
+﻿using BusinessLogic.Abstractions;
+using BusinessLogic.Contexts;
 using BusinessLogic.Responses;
 using BusinessLogic.ViewModels;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Implementations
 {
-    public class MessagesService
+    public class MessagesService : IMessagesViewModelService
     {
         private readonly IDatabaseContext _db;
 
@@ -18,7 +19,7 @@ namespace BusinessLogic.Implementations
         {
             _db = db;
         }
-        public async Task<ServiceResponse> Getinbox(int id)
+        public async Task<ServiceResponse> GetInbox(int id)
         {
             var pars = new Dictionary<string, string>();
             pars.Add(nameof(id), id.ToString()); ;
@@ -62,7 +63,7 @@ namespace BusinessLogic.Implementations
 
 
         }
-        public async Task<ServiceResponse> GetmessageWithToId(int toId)
+        public async Task<ServiceResponse> GetMessageWithToId(int toId)
         {
             var pars = new Dictionary<string, string>();
             pars.Add(nameof(toId), toId.ToString()); 
@@ -77,14 +78,14 @@ namespace BusinessLogic.Implementations
             var dalResponse = await _db.ExecuteQuery("GetMessagesEmailsToEmpIdWithMsgId", pars);
             return new ServiceResponse(dalResponse);
         }
-        public async Task<ServiceResponse> GetmessageWithToIdEmails(int toId)
+        public async Task<ServiceResponse> GetMessageWithToIdEmails(int toId)
         {
             var pars = new Dictionary<string, string>();
             pars.Add(nameof(toId), toId.ToString());
             var dalResponse = await _db.ExecuteQuery("GetmessageWithToIdEmails", pars);
             return new ServiceResponse(dalResponse);
         }
-        public async Task<ServiceResponse> GetmessageWithToIdNoti(int toId)
+        public async Task<ServiceResponse> GetMessageWithToIdNoti(int toId)
         {
             var pars = new Dictionary<string, string>();
             pars.Add(nameof(toId), toId.ToString());

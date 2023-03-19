@@ -39,7 +39,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] StudentViewModel model)
+        public async Task<IActionResult> Update([FromBody] StudentViewModel model)
         {
             if (ModelState.IsValid)
             {

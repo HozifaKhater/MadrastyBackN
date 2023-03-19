@@ -12,6 +12,7 @@ namespace BusinessLogic.Abstractions
     {
         Task<ServiceResponse> Get();
         Task<ServiceResponse> GetById(int id);
+        Task<ServiceResponse> GetBySCode(string scode);
         Task<ServiceResponse> Delete(int id);
         Task<ServiceResponse> Save(DefinitionViewModel definition);
         Task<ServiceResponse> Update(DefinitionViewModel definition);

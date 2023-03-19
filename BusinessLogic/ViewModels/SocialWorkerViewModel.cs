@@ -9,7 +9,7 @@ namespace BusinessLogic.ViewModels
     public class SocialWorkerViewModel
     {
 
-        public int SocialId { get; set; }
+        public int Id { get; set; }
         public string SocialLevel { get; set; } = string.Empty;
         public string SocialClass { get; set; } = string.Empty;
         public string SocialDep { get; set; } = string.Empty;

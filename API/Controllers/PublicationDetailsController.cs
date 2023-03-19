@@ -23,14 +23,14 @@ namespace API.Controllers
             return Ok(await _service.Get());
         }
 
-        [HttpGet]
+        [HttpGet("publicationId")]
         public async Task<IActionResult> GetByPublicationId(int publicationId)
         {
             return Ok(await _service.GetByPublicationId(publicationId));
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("id")]
+        public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _service.GetById(id));
         }
@@ -46,7 +46,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] PublicationDetailsViewModel model)
+        public async Task<IActionResult> Update([FromBody] PublicationDetailsViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace API.Controllers
             return Ok(new ServiceResponse("Validation Error"));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("id")]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await _service.Delete(id));

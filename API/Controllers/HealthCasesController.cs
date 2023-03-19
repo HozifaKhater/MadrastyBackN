@@ -57,7 +57,7 @@ namespace API.Controllers
             var result = await _service.GetHealthCasesDetailsWithId(id);
             return Ok(result);
         }
-        [HttpGet]
+        [HttpGet("id")]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _service.GetById(id);
@@ -73,7 +73,7 @@ namespace API.Controllers
             return Ok(new ServiceResponse("Validation Error"));
         }
         [HttpPut]
-        public async Task<IActionResult> update_HealthCases_details([FromBody] HealthCasesViewModel model)
+        public async Task<IActionResult> UpdateHealthCasesDetails([FromBody] HealthCasesViewModel model)
         {
             var result = await _service.UpdateHealthCasesDetails(model);
             return Ok(result);

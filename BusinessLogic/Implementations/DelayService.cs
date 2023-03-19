@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Contexts;
+﻿using BusinessLogic.Abstractions;
+using BusinessLogic.Contexts;
 using BusinessLogic.Responses;
 using BusinessLogic.ViewModels;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Implementations
 {
-    public class DelayService
+    public class DelayService : IDelayService
     {
         private readonly IDatabaseContext _db;
 

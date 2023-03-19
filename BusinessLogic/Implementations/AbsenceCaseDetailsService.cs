@@ -29,6 +29,15 @@ namespace BusinessLogic.Implementations
             return new ServiceResponse(dalResponse);
         }
 
+        public async Task<ServiceResponse> DeleteByAbsenceCaseId(int absenceCaseId)
+        {
+            var pars = new Dictionary<string, string>();
+            pars.Add(nameof(absenceCaseId), absenceCaseId.ToString());
+
+            var dalResponse = await _db.ExecuteQuery("DeleteAbsenceCaseDetailsByAbsenceCaseId", pars);
+            return new ServiceResponse(dalResponse);
+        }
+
         public async Task<ServiceResponse> Get()
         {
             var dalResponse = await _db.ExecuteQuery("GetAbsenceCaseDetails");
@@ -41,6 +50,15 @@ namespace BusinessLogic.Implementations
             pars.Add(nameof(absenceCaseDetailsId), absenceCaseDetailsId.ToString());
 
             var dalResponse = await _db.ExecuteQuery("GetAbsenceCaseDetailsById", pars);
+            return new ServiceResponse(dalResponse);
+        }
+
+        public async Task<ServiceResponse> GetByAbsenceCaseId(int absenceCaseId)
+        {
+            var pars = new Dictionary<string, string>();
+            pars.Add(nameof(absenceCaseId), absenceCaseId.ToString());
+
+            var dalResponse = await _db.ExecuteQuery("GetAbsenceCaseDetailsByAbsenceCaseId", pars);
             return new ServiceResponse(dalResponse);
         }
 

@@ -15,5 +15,6 @@ namespace BusinessLogic.Abstractions
         Task<ServiceResponse> Delete(int mentalityInquiriesId);
         Task<ServiceResponse> Save(MentalityInquiriesViewModel mentalityInquiries);
         Task<ServiceResponse> Update(MentalityInquiriesViewModel mentalityInquiries);
+        Task<ServiceResponse> GetMentalityInquiriesStat();
     }
 }
