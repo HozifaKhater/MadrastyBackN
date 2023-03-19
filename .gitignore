@@ -1,5 +1,5 @@
 
-/.vs
+/.vs/
 /API/obj
 /API/bin
 /BusinessLogic/obj
@@ -11,3 +11,4 @@
 /BusinessLogic/bin/Debug/net6.0/BusinessLogic.deps.json
 /BusinessLogic/bin/Debug/net6.0/BusinessLogic.dll
 /BusinessLogic/bin/Debug/net6.0/BusinessLogic.pdb
+/.vs/SMS_Project/DesignTimeBuild/.dtbcache.v2
